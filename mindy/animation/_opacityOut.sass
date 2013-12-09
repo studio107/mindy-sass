@@ -1,0 +1,14 @@
++keyframes(opacityOut)
+  0%
+    opacity: 1
+
+  100%
+    opacity: 0
+
+=opacityOut($duration, $delay, $function, $fill, $visibility)
+  +animation-name(opacityOut)
+  +duration($duration)
+  +delay($delay)
+  +function($function)
+  +fill-mode($fill)
+  +visibility($visibility)

@@ -1,0 +1,50 @@
+=tabs-base($list-class: '.tab-list', $block-class: '.tab-block', $panel-class: '.tab-panel')
+  #{$panel-class}
+    +reset-list
+    +float-right
+    +clearfix
+    li
+      +float-left
+      margin-left: 5px
+
+  #{$list-class}
+    $tablist-height: 36px
+    +reset-list
+    height: $tablist-height
+    line-height: $tablist-height - 1px
+
+    li
+      +border-radius($buttonBorderRadius $buttonBorderRadius 0 0)
+      +float-left
+      padding: 0 14px
+      border-style: solid
+      border-color: transparent
+      border-width: 1px
+      cursor: pointer
+
+      &:hover:not(.current)
+        border-width: 1px 1px 0 1px
+
+      &.current
+        cursor: default
+
+  #{$block-class}
+    padding-top: 15px
+    display: none
+
+    &.active
+      display: block
+
+  @content
+
+=tabs-default($list-class: '.tab-list', $block-class: '.tab-block', $panel-class: '.tab-panel')
+  +tabs-base($list-class, $block-class, $panel-class)
+    .tab-list
+      border-bottom: 1px solid $silvery
+
+      li
+        &:hover:not(.current)
+          background-color: $clouds
+
+        &.current
+          border-color: $silvery $silvery #fff $silvery

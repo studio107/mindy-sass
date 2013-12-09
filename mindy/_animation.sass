@@ -1,0 +1,40 @@
+$duration: 1s
+$delay: .2s
+$function: ease
+$fill: both
+$visibility: hidden
+
+=crossbrowser($name, $value)
+  -webkit-#{$name}: $value
+  -khtml-#{$name}: $value
+  -moz-#{$name}: $value
+  -o-#{$name}: $value
+  #{$name}: $value
+
+=animation-name($name)
+  +crossbrowser(animation-name, $name)
+
+=duration($duration: 1s)
+  +crossbrowser(animation-duration, $duration)
+
+=delay($delay: .2s)
+  +crossbrowser(animation-delay, $delay)
+
+=function($function: ease)
+  +crossbrowser(animation-timing-function, $function)
+
+=fill-mode($fill: both)
+  +crossbrowser(animation-fill-mode, $fill)
+
+=visibility($visibility: hidden)
+  +crossbrowser(backface-visibility, $visibility)
+
+@import "animation/opacityIn"
+@import "animation/opacityOut"
+
+.animated
+  &.opacityIn
+    +opacityIn($duration, $delay, $function, $fill, $visibility)
+
+  &.opacityOut
+    +opacityOut($duration, $delay, $function, $fill, $visibility)

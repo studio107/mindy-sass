@@ -1,0 +1,23 @@
+=mopacity($opacity)
+  opacity: $opacity
+  -moz-opacity: $opacity
+  $opacity: $opacity * 100
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=#{$opacity})"
+  filter: "alpha(opacity=#{$opacity})"
+
+// DEPRECATED: see +elipsis http://compass-style.org/reference/compass/utilities/text/ellipsis/#mixin-ellipsis
+=text-more
+  white-space: nowrap
+  overflow: hidden
+  text-overflow: ellipsis
+
+=resetList
+  +reset-list
+
+=setBackground($color, $size: 1px, $style: solid)
+  @if $color == none
+    background-color: transparent
+    border: 0
+  @else
+    background-color: $color
+    border: $size $style darken($color,6%)
