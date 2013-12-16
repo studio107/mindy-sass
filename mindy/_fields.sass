@@ -1,3 +1,19 @@
+$placeholder-color: #999 !default
+$input-error-color: #da3e5a !default
+
+=placeholder-color($color)
+  &::-webkit-input-placeholder
+    color: $color
+
+  &:-moz-placeholder
+    color: $color
+
+  &::-moz-placeholder
+    color: $color
+
+  &:-ms-input-placeholder
+    color: $color
+
 =fields
   input
     &[type="radio"], &[type="checkbox"]
@@ -47,7 +63,6 @@
 
   /* Errors and Success */
   .error, .success
-    margin-left: 5px
     font-weight: normal
     font-size: 0.85em
 
@@ -105,17 +120,7 @@
 
   /* Placeholders */
   ::-webkit-input-placeholder
-    color: #999999
     padding: 1px 2px
 
-  /* FF19+ */
-  ::-moz-placeholder
-    color: #999999
-
-  input:-moz-placeholder,
-  textarea:-moz-placeholder
-    color: #999999
-
-  input:-ms-input-placeholder,
-  textarea:-ms-input-placeholder
-    color: #999999
+  input, textarea
+    +placeholder-color($placeholder-color)
