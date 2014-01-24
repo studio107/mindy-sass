@@ -35,6 +35,14 @@ $gridWidth: 978px !default
   +float-left
   +grid-column($n, $gridColumnWidth, $gridGutterWidth)
 
+  &.first
+    margin-left: 0
+
+  &:last-child
+    +clearfix
+
+  &:first-child
+    margin-left: 0
 
   @if $first == true
     margin-left: 0
