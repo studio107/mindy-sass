@@ -6,6 +6,8 @@ $gridColumns: 12 !default
 $gridColumnWidth: 54px !default
 $gridGutterWidth: 30px !default
 $gridWidth: 978px !default
+$gridPaddings:  15px !default
+$useGridPaddings: true !default
 
 =generateGrid($gridFluid)
   @if $gridFluid == true
@@ -92,7 +94,12 @@ $gridWidth: 978px !default
     width: $gridWidth
     margin-left: auto
     margin-right: auto
+    @if $useGridPaddings == true
+      padding-left: $gridPaddings
+      padding-right: $gridPaddings
 
+=layout-holder
+  min-width: $gridWidth+$gridPaddings*2
 
   /**TODO DEPRECATION WARNING @extending an outer selector from within @media is deprecated. Fix it
 =grid-generate-column($gridFluid, $gridColumns, $gridColumnWidth, $gridGutterWidth)
