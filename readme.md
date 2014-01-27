@@ -1,4 +1,1 @@
-# Mindy sass framework
-
-
-# Under development. Not ready for production.
+# Small collection of mixins and functions

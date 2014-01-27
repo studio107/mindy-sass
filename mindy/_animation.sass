@@ -4,13 +4,6 @@ $function: ease
 $fill: both
 $visibility: hidden
 
-=crossbrowser($name, $value)
-  -webkit-#{$name}: $value
-  -khtml-#{$name}: $value
-  -moz-#{$name}: $value
-  -o-#{$name}: $value
-  #{$name}: $value
-
 =animation-name($name)
   +crossbrowser(animation-name, $name)
 
