@@ -1,0 +1,13 @@
+{
+    "name": "mindy-sass",
+    "version": "1.0.0",
+    "main": [
+        "mindy/_mindy.sass"
+    ],
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "components"
+    ],
+    "dependencies": {}
+}
