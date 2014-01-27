@@ -21,7 +21,7 @@ module.exports = function(grunt) {
                 options: {
                     ...
                     importPath: [
-                        'vendor/mindy-sass'
+                        'bower_components/mindy-sass'
                     ]
                 }
             }
