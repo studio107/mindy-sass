@@ -1,0 +1,83 @@
+@mixin reset-list {
+  margin: 0;
+  border: 0 none;
+  outline: 0 none;
+  padding: 0;
+  list-style: none;
+}
+
+@mixin mopacity($opacity) {
+  // @DEPRECATED
+  opacity: $opacity;
+  -moz-opacity: $opacity;
+  $opacity: $opacity * 100;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=#{$opacity})";
+  filter: "alpha(opacity=#{$opacity})";
+}
+
+@mixin gradient($startColor, $stopColor) {
+  @include background-image(linear-gradient(color-stops($startColor, $stopColor)))
+}
+
+@mixin crossbrowser($name, $value) {
+  -webkit-#{$name}: $value;
+  -khtml-#{$name}: $value;
+  -moz-#{$name}: $value;
+  -o-#{$name}: $value;
+  #{$name}: $value;
+}
+
+@mixin antialias($value: true) {
+  @if $value == true {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  } @else {
+    -webkit-font-smoothing: subpixel-antialiased;
+    -moz-osx-font-smoothing: auto;
+    text-rendering: auto;
+  }
+}
+
+@mixin disable-user-select {
+  -webkit-touch-callout: none;
+  @include crossbrowser(user-select, none);
+}
+
+@mixin keyframes($name) {
+  @-webkit-keyframes #{$name} {
+    @content;
+  }
+  @-moz-keyframes #{$name} {
+    @content;
+  }
+  @-ms-keyframes #{$name} {
+    @content;
+  }
+  @-o-keyframes #{$name} {
+    @content;
+  }
+  @keyframes #{$name} {
+    @content;
+  }
+}
+
+@mixin clear {
+  clear: both;
+  height: 0;
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+}
+
+@mixin clearfix {
+  *zoom: 1;
+  &:before, &:after {
+    display: table;
+    content: "";
+    line-height: 0;
+  }
+  &:after {
+    clear: both;
+  }
+}
