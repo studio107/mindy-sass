@@ -1,8 +1,8 @@
 {
     "name": "mindy-sass",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "main": [
-        "mindy/_mindy.sass"
+        "mindy/_mindy.scss"
     ],
     "ignore": [
         "**/.*",
