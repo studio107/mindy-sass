@@ -5,7 +5,7 @@ $button-background: $peter-river !default;
   border: none;
   background-color: $background;
   padding: $padding;
-  @include box-sizing(padding-box);
+  box-sizing: padding-box;
   display: inline-block;
   color: #fff;
   outline: none;
