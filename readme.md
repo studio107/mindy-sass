@@ -6,6 +6,9 @@
 bower install mindy-sass --save
 ```
 
+##Settings
+Example configuration file is _settings.scss.
+
 # mixins
 
 * crossbrowser
